@@ -1,0 +1,9 @@
+<suite name="Flight Booking Service App Test">
+	<test name="Flight Booking Service App Test Cases">
+	<parameter name="UserName" value="interiautest@gmail.com"></parameter>
+	<parameter name="Password" value="Dsop@123"></parameter>
+		<classes>
+			<class name="TestCases.VerifyUserDashBoard"></class>
+		</classes>
+	</test>
+</suite>

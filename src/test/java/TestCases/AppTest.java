@@ -14,13 +14,14 @@ import org.testng.Reporter;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import CommonFunctions.FlightBookingsOrderPage;
 import CommonFunctions.FlightReservationPage;
 import Utilities.AppUtils;
 
 public class AppTest extends AppUtils{
 	
 	@Test(priority = 1)
-	public void verifyUserPage() {
+	public void verifyUserPageTest() {
 		if(driver.findElement(By.xpath(p.getProperty("objUserDashBoard"))).isDisplayed()) {
 			Reporter.log("User Dashboard verified Successfully", true);
 		}
@@ -28,7 +29,7 @@ public class AppTest extends AppUtils{
 	
 	@Parameters({"date","from","to", "airlineName", "PassengerName", "FlightClass", "Tickets"})
 	@Test(priority = 2)
-	public void searchFlights(String date, String from, String to, String airlineName, String PassengerName, String FlightClass, String Tickets) throws Throwable {
+	public void searchFlightsTest(String date, String from, String to, String airlineName, String PassengerName, String FlightClass, String Tickets) throws Throwable {
 		FlightReservationPage sf = PageFactory.initElements(driver, FlightReservationPage.class);
 		sf.searchFlightsButton(date, from, to, airlineName);
 		sf.orderInformation(PassengerName, FlightClass, Tickets);
@@ -44,6 +45,20 @@ public class AppTest extends AppUtils{
 		
 		String successMessage=driver.findElement(By.xpath(p.getProperty("objBookingSuccessMessage"))).getText();
 		Reporter.log(successMessage, true);
+		
+	}
+	
+	@Parameters({"orderId"})
+	@Test(priority = 3)
+	public void viewOrderTest(String orderId) throws Throwable {
+		FlightBookingsOrderPage fb = PageFactory.initElements(driver, FlightBookingsOrderPage.class);
+		fb.viewOrder(orderId);
+		Thread.sleep(3000);
+		TakesScreenshot ts = (TakesScreenshot)driver;
+		File src=ts.getScreenshotAs(OutputType.FILE);
+		File trg = new File("test-output/ScreenShots/ViewOrder.png");
+		FileUtils.copyFile(src, trg);
+		
 		
 	}
 	

@@ -137,6 +137,10 @@ public class FlightReservationPage extends AppUtils{
 		
 		objPassengerName.sendKeys(PassengerName);
 		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(p.getProperty("objFlightFirstClass"))));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(p.getProperty("objFlightBusinessClass"))));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(p.getProperty("objFlightEconomyClass"))));
 		if(FlightClass.equalsIgnoreCase("First Class")) {
 			objFlightFirstClass.click();
 		}

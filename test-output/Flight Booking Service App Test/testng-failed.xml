@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Flight Booking Service App Test]">
-  <test thread-count="5" name="Verify User Dashboard Page(failed)">
-    <parameter name="UserName" value="interiautest@gmail.com"/>
-    <parameter name="Password" value="Dsop@123"/>
-    <classes>
-      <class name="TestCases.AppTest">
-        <methods>
-          <include name="login"/>
-          <include name="searchFlights"/>
-          <include name="logout"/>
-          <include name="launchBrowser"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- TestCases.AppTest -->
-    </classes>
-  </test> <!-- Verify User Dashboard Page(failed) -->
-  <test thread-count="5" name="Search Flights Test(failed)">
+  <test thread-count="5" name="Flight Booking Service Testcases(failed)">
     <parameter name="date" value="05/11/2025"/>
     <parameter name="UserName" value="interiautest@gmail.com"/>
     <parameter name="FlightClass" value="First Class"/>
+    <parameter name="orderId" value="11838"/>
     <parameter name="PassengerName" value="Sridhar Parutabad"/>
     <parameter name="from" value="Hyderabad"/>
     <parameter name="Tickets" value="5"/>
@@ -29,13 +15,14 @@
     <classes>
       <class name="TestCases.AppTest">
         <methods>
+          <include name="viewOrderTest"/>
+          <include name="searchFlightsTest" invocation-numbers="0"/>
           <include name="login"/>
-          <include name="searchFlights" invocation-numbers="0"/>
           <include name="logout"/>
           <include name="launchBrowser"/>
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- TestCases.AppTest -->
     </classes>
-  </test> <!-- Search Flights Test(failed) -->
+  </test> <!-- Flight Booking Service Testcases(failed) -->
 </suite> <!-- Failed suite [Flight Booking Service App Test] -->

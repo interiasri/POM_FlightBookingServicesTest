@@ -10,6 +10,7 @@
 	<parameter name="PassengerName" value="Sridhar Parutabad"></parameter>
 	<parameter name="FlightClass" value="First Class"></parameter>
 	<parameter name="Tickets" value="5"></parameter>
+	<parameter name="orderId" value="11838"></parameter>
 		<classes>
 			<class name="TestCases.AppTest"></class>
 		</classes>

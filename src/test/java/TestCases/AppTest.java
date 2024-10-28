@@ -17,10 +17,17 @@ import org.testng.annotations.Test;
 import CommonFunctions.FlightReservationPage;
 import Utilities.AppUtils;
 
-public class FlightReservationTest extends AppUtils{
+public class AppTest extends AppUtils{
+	
+	@Test(priority = 1)
+	public void verifyUserPage() {
+		if(driver.findElement(By.xpath(p.getProperty("objUserDashBoard"))).isDisplayed()) {
+			Reporter.log("User Dashboard verified Successfully", true);
+		}
+	}
 	
 	@Parameters({"date","from","to", "airlineName", "PassengerName", "FlightClass", "Tickets"})
-	@Test
+	@Test(priority = 2)
 	public void searchFlights(String date, String from, String to, String airlineName, String PassengerName, String FlightClass, String Tickets) throws Throwable {
 		FlightReservationPage sf = PageFactory.initElements(driver, FlightReservationPage.class);
 		sf.searchFlightsButton(date, from, to, airlineName);
@@ -39,5 +46,5 @@ public class FlightReservationTest extends AppUtils{
 		Reporter.log(successMessage, true);
 		
 	}
-
+	
 }

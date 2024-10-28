@@ -10,8 +10,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -35,7 +37,7 @@ public class AppUtils {
 	}
 	
 	@Parameters({"UserName", "Password"})
-	@BeforeTest
+	@BeforeMethod
 	public void login(String UserName, String Password) {
 		driver.get(p.getProperty("url"));
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -45,7 +47,7 @@ public class AppUtils {
 	}
 	
 	
-	@AfterTest
+	@AfterMethod
 	public void logout() {
 		LogoutPage lo = PageFactory.initElements(driver, LogoutPage.class);
 		lo.logoutFeature();

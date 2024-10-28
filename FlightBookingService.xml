@@ -1,9 +1,24 @@
+
 <suite name="Flight Booking Service App Test">
-	<test name="Flight Booking Service App Test Cases">
+	<test name="Verify User Dashboard">
 	<parameter name="UserName" value="interiautest@gmail.com"></parameter>
 	<parameter name="Password" value="Dsop@123"></parameter>
 		<classes>
 			<class name="TestCases.VerifyUserDashBoard"></class>
+		</classes>
+	</test>
+	<test name="Search Flights Test">
+	<parameter name="UserName" value="interiautest@gmail.com"></parameter>
+	<parameter name="Password" value="Dsop@123"></parameter>
+	<parameter name="date" value="05/11/2025"></parameter>
+	<parameter name="from" value="Hyderabad"></parameter>
+	<parameter name="to" value="Kolkatha"></parameter>
+	<parameter name="airlineName" value="Air India"></parameter>
+	<parameter name="PassengerName" value="Sridhar Parutabad"></parameter>
+	<parameter name="FlightClass" value="First Class"></parameter>
+	<parameter name="Tickets" value="5"></parameter>
+		<classes>
+			<class name="TestCases.FlightReservationTest"></class>
 		</classes>
 	</test>
 </suite>

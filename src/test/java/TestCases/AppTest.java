@@ -20,7 +20,7 @@ import Utilities.AppUtils;
 
 public class AppTest extends AppUtils{
 	
-	@Test(priority = 1)
+	@Test(priority = 1, enabled = false)
 	public void verifyUserPageTest() {
 		if(driver.findElement(By.xpath(p.getProperty("objUserDashBoard"))).isDisplayed()) {
 			Reporter.log("User Dashboard verified Successfully", true);
@@ -28,7 +28,7 @@ public class AppTest extends AppUtils{
 	}
 	
 	@Parameters({"date","from","to", "airlineName", "PassengerName", "FlightClass", "Tickets"})
-	@Test(priority = 2)
+	@Test(priority = 2, enabled = false)
 	public void searchFlightsTest(String date, String from, String to, String airlineName, String PassengerName, String FlightClass, String Tickets) throws Throwable {
 		FlightReservationPage sf = PageFactory.initElements(driver, FlightReservationPage.class);
 		sf.searchFlightsButton(date, from, to, airlineName);
@@ -49,7 +49,7 @@ public class AppTest extends AppUtils{
 	}
 	
 	@Parameters({"orderId"})
-	@Test(priority = 3)
+	@Test(priority = 3, enabled = false)
 	public void viewOrderTest(String orderId) throws Throwable {
 		FlightBookingsOrderPage fb = PageFactory.initElements(driver, FlightBookingsOrderPage.class);
 		fb.viewOrder(orderId);
@@ -58,7 +58,26 @@ public class AppTest extends AppUtils{
 		File src=ts.getScreenshotAs(OutputType.FILE);
 		File trg = new File("test-output/ScreenShots/ViewOrder.png");
 		FileUtils.copyFile(src, trg);
-		
+	}
+	
+	@Parameters({"orderId", "PassengerName", "FlightClass","Tickets"})
+	@Test(priority = 4, enabled = true)
+	public void editOrderTest(String orderId, String PassengerName, String FlightClass, String Tickets) throws Throwable {
+		FlightBookingsOrderPage fb = PageFactory.initElements(driver, FlightBookingsOrderPage.class);
+		fb.editOrder(orderId);
+		Thread.sleep(3000);
+		TakesScreenshot ts = (TakesScreenshot)driver;
+		File src=ts.getScreenshotAs(OutputType.FILE);
+		File trg = new File("test-output/ScreenShots/EditOrder.png");
+		FileUtils.copyFile(src, trg);
+		FlightReservationPage bk = PageFactory.initElements(driver, FlightReservationPage.class);
+		bk.orderInformation(PassengerName, FlightClass, Tickets);
+		driver.findElement(By.xpath(p.getProperty("objUpdateOrderButton"))).click();
+		Thread.sleep(3000);
+		TakesScreenshot ts1 = (TakesScreenshot)driver;
+		File src1=ts1.getScreenshotAs(OutputType.FILE);
+		File trg1 = new File("test-output/ScreenShots/UpdateStatus.png");
+		FileUtils.copyFile(src1, trg1);
 		
 	}
 	

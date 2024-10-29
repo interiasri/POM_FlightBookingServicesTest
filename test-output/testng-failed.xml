@@ -4,20 +4,19 @@
   <test thread-count="5" name="Flight Booking Service Testcases(failed)">
     <parameter name="date" value="05/11/2025"/>
     <parameter name="UserName" value="interiautest@gmail.com"/>
-    <parameter name="FlightClass" value="First Class"/>
+    <parameter name="FlightClass" value="Business"/>
     <parameter name="orderId" value="11838"/>
-    <parameter name="PassengerName" value="Sridhar Parutabad"/>
+    <parameter name="PassengerName" value="Shankar Narayana"/>
     <parameter name="from" value="Hyderabad"/>
-    <parameter name="Tickets" value="5"/>
+    <parameter name="Tickets" value="1"/>
     <parameter name="to" value="Kolkatha"/>
     <parameter name="airlineName" value="Air India"/>
     <parameter name="Password" value="Dsop@123"/>
     <classes>
       <class name="TestCases.AppTest">
         <methods>
-          <include name="viewOrderTest"/>
-          <include name="searchFlightsTest" invocation-numbers="0"/>
           <include name="login"/>
+          <include name="editOrderTest" invocation-numbers="0"/>
           <include name="logout"/>
           <include name="launchBrowser"/>
           <include name="closeBrowser"/>

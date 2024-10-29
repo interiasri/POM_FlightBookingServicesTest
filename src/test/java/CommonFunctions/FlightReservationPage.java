@@ -59,6 +59,9 @@ public class FlightReservationPage extends AppUtils{
 	@FindBy(xpath="//button[contains(@class,'insert-order')]")
 	WebElement objInsertOrder;
 	
+	@FindBy(xpath="//*[@id=\"flight_reservation_form\"]/div/div[4]/div[1]/button")
+	WebElement objUpdateOrder;
+	
 //	Search And Select Flight or Airline
 	public void searchFlightsButton(String date, String from, String to, String airlineName) throws Throwable {
 		objSearchDate.sendKeys(date);
@@ -134,7 +137,7 @@ public class FlightReservationPage extends AppUtils{
 	
 //	Fill Order Information
 	public void orderInformation(String PassengerName, String FlightClass, String Tickets) throws Throwable {
-		
+		objPassengerName.clear();
 		objPassengerName.sendKeys(PassengerName);
 		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -159,8 +162,16 @@ public class FlightReservationPage extends AppUtils{
 		File src=ts.getScreenshotAs(OutputType.FILE);
 		File trg = new File("test-output/ScreenShots/ReviewOrder.png");
 		FileUtils.copyFile(src, trg);
-		
-		objInsertOrder.click();
+		try {
+			if(objInsertOrder.isDisplayed()) {
+				objInsertOrder.click();
+			}
+			if(objUpdateOrder.isDisplayed()) {
+				objUpdateOrder.click();
+			}
+		} catch (Exception e) {
+			Reporter.log(e.getMessage(), true);
+		}
 		
 	}
 

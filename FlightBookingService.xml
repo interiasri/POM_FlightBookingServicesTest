@@ -7,9 +7,9 @@
 	<parameter name="from" value="Hyderabad"></parameter>
 	<parameter name="to" value="Kolkatha"></parameter>
 	<parameter name="airlineName" value="Air India"></parameter>
-	<parameter name="PassengerName" value="Sridhar Parutabad"></parameter>
+	<parameter name="PassengerName" value="Rudra Murthy"></parameter>
 	<parameter name="FlightClass" value="First Class"></parameter>
-	<parameter name="Tickets" value="5"></parameter>
+	<parameter name="Tickets" value="1"></parameter>
 	<parameter name="orderId" value="11838"></parameter>
 		<classes>
 			<class name="TestCases.AppTest"></class>

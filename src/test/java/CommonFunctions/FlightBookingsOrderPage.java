@@ -146,7 +146,7 @@ public class FlightBookingsOrderPage extends AppUtils{
 					tcols=trows.get(i).findElements(By.tagName("td"));
 					ActualOrderId=tcols.get(0).getText();
 					if(ActualOrderId.equalsIgnoreCase(orderId)) {
-						tcols.get(9).findElement(By.linkText("Edit")).click();
+						tcols.get(9).findElement(By.linkText("Delete")).click();
 						Thread.sleep(3000);
 						isAlertPageDisplayed = true;
 						break;
@@ -167,7 +167,7 @@ public class FlightBookingsOrderPage extends AppUtils{
 					tcols=trows.get(i).findElements(By.tagName("td"));
 					ActualOrderId=tcols.get(0).getText();
 					if(ActualOrderId.equalsIgnoreCase(orderId)) {
-						tcols.get(9).findElement(By.linkText("Edit")).click();
+						tcols.get(9).findElement(By.linkText("Delete")).click();
 						Thread.sleep(3000);
 						isAlertPageDisplayed = true;
 						break;

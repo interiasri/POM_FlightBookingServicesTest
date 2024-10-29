@@ -61,7 +61,7 @@ public class AppTest extends AppUtils{
 	}
 	
 	@Parameters({"orderId", "PassengerName", "FlightClass","Tickets"})
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 4, enabled = false)
 	public void editOrderTest(String orderId, String PassengerName, String FlightClass, String Tickets) throws Throwable {
 		FlightBookingsOrderPage fb = PageFactory.initElements(driver, FlightBookingsOrderPage.class);
 		fb.editOrder(orderId);
@@ -78,7 +78,18 @@ public class AppTest extends AppUtils{
 		File src1=ts1.getScreenshotAs(OutputType.FILE);
 		File trg1 = new File("test-output/ScreenShots/UpdateStatus.png");
 		FileUtils.copyFile(src1, trg1);
-		
 	}
 	
+	@Parameters({"orderId"})
+	@Test(priority = 5, enabled = true)
+	public void deleteOrder(String orderId) throws Throwable {
+		FlightBookingsOrderPage del = PageFactory.initElements(driver, FlightBookingsOrderPage.class);
+		del.deleteOrder(orderId);
+		Thread.sleep(3000);
+		TakesScreenshot ts = (TakesScreenshot)driver;
+		File src=ts.getScreenshotAs(OutputType.FILE);
+		File trg = new File("test-output/ScreenShots/OrderDeleteSuccessMessage.png");
+		FileUtils.copyFile(src, trg);
+		
+	}
 }

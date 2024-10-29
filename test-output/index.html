@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Flight_Booking_Service_App_Test">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Flight_Booking_Service_App_Test" title="TestCases.AppTest" class="method navigator-link" hash-for-method="editOrderTest(11838, Rudra Murthy, First Class, 1)">editOrderTest(11838, Rudra Murthy, First Class, 1)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Flight_Booking_Service_App_Test" title="TestCases.AppTest" class="method navigator-link" hash-for-method="deleteOrder(11851)">deleteOrder(11851)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Flight_Booking_Service_App_Test -->
@@ -126,10 +126,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="editOrderTest(11838, Rudra Murthy, First Class, 1)">
-                  </a> <!-- editOrderTest(11838, Rudra Murthy, First Class, 1) -->
-                  <span class="method-name">editOrderTest</span>
-                  <span class="parameters">(11838,Rudra Murthy,First Class,1)</span>
+                  <a name="deleteOrder(11851)">
+                  </a> <!-- deleteOrder(11851) -->
+                  <span class="method-name">deleteOrder</span>
+                  <span class="parameters">(11851)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -148,7 +148,7 @@
     &lt;parameter name=&quot;date&quot; value=&quot;05/11/2025&quot;/&gt;
     &lt;parameter name=&quot;UserName&quot; value=&quot;interiautest@gmail.com&quot;/&gt;
     &lt;parameter name=&quot;FlightClass&quot; value=&quot;First Class&quot;/&gt;
-    &lt;parameter name=&quot;orderId&quot; value=&quot;11838&quot;/&gt;
+    &lt;parameter name=&quot;orderId&quot; value=&quot;11851&quot;/&gt;
     &lt;parameter name=&quot;PassengerName&quot; value=&quot;Rudra Murthy&quot;/&gt;
     &lt;parameter name=&quot;from&quot; value=&quot;Hyderabad&quot;/&gt;
     &lt;parameter name=&quot;Tickets&quot; value=&quot;1&quot;/&gt;
@@ -198,14 +198,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'editOrderTest')
+data.setCell(0, 1, 'deleteOrder')
 data.setCell(0, 2, 'TestCases.AppTest')
-data.setCell(0, 3, 23957);
+data.setCell(0, 3, 6868);
 window.suiteTableData['Flight_Booking_Service_App_Test']= { tableData: data, tableDiv: 'times-div-Flight_Booking_Service_App_Test'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 23 seconds</span>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
               <div id="times-div-Flight_Booking_Service_App_Test">
               </div> <!-- times-div-Flight_Booking_Service_App_Test -->
             </div> <!-- times-div -->
@@ -217,35 +217,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">editOrderTest(11838, Rudra Murthy, First Class, 1)</span>
+              <span class="reporter-method-name">deleteOrder(11851)</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Edit Page Displayed</span>
-                <span class="reporter-method-output">no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(@class,'insert-order')]"}
-  (Session info: chrome=130.0.6723.70)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0dd3ecb505ca29a27ff2b94f8ac6321d, findElement {using=xpath, value=//button[contains(@class,'insert-order')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.70, chrome: {chromedriverVersion: 130.0.6723.69 (3ec172b971b9..., userDataDir: C:\Users\Interia\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49922}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49922/devtoo..., se:cdpVersion: 130.0.6723.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0dd3ecb505ca29a27ff2b94f8ac6321d</span>
+                <span class="reporter-method-output">Alert Displayed</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Flight_Booking_Service_App_Test" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">4 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">TestCases.AppTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyUserPageTest</span>
+                <span class="ignored-method-name">searchFlightsTest</span>
+                <br/>
+                <span class="ignored-method-name">editOrderTest</span>
                 <br/>
                 <span class="ignored-method-name">viewOrderTest</span>
                 <br/>
-                <span class="ignored-method-name">searchFlightsTest</span>
+                <span class="ignored-method-name">verifyUserPageTest</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -264,19 +257,19 @@ Session ID: 0dd3ecb505ca29a27ff2b94f8ac6321d</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">login(interiautest@gmail.com, Dsop@123)</span>
-                <span class="method-start">1818 ms</span>
+                <span class="method-start">1882 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">editOrderTest(11838, Rudra Murthy, First Class, 1)</span>
-                <span class="method-start">5782 ms</span>
+                <span class="method-name">deleteOrder(11851)</span>
+                <span class="method-start">5226 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">logout</span>
-                <span class="method-start">29742 ms</span>
+                <span class="method-start">12097 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">30683 ms</span>
+                <span class="method-start">12999 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
